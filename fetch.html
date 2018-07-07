@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch API</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div>
+ <div class="ui container">
+    <!-- Navigation Menu -->
+    <h3>Welcome to Currency Coverter App</h3>
+    Currency conversion made easy (online or offline)
+  </div>
+
+    <div id="currency">
+      <form id="form">
+
+        <div class="form">
+          <div class="form-div">
+            <label> Enter Amount</label>
+            <input id="amount" type="text" name="amount" value="50" placeholder="Enter Amount">
+          </div>
+          <div class="form-div">
+            <label>Convert from</label>
+                <select id="handle1" name="convertFrom" placeholder="Convert From ....">
+                  <option value="USD">United States Dollar</option>
+                  <option value="GBP">British Pound Sterling</option>
+                  <option value="EUR">European Euro
+                  <option value="NGN">Nigerian Naira</option>
+                </select>
+          </div>
+          <div class="form-div">
+            <label>Convert to</label>
+                <select id="handle2" name="convertTo" placeholder="Convert To ....">
+                  <option value="USD">United States Dollar</option>
+                  <option value="GBP">British Pound Sterling</option>
+                  <option value="EUR">European Euro
+                  <option value="NGN" selected>Nigerian Naira</option>
+                </select>
+          </div>
+          <div class="form-div">
+              <input id="convertBtn" type="submit" name="Convert">
+              <p id="convertedValue"></p>
+          </div>
+
+        </div>
+      </form>
+    </div>
+    <div id="img-div">
+      <!-- <img  id="target" src="../assets/logo.png"> -->
+      <!-- <img  id="target" src="../assets/webtools.jpg"> -->
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+
+  function loadJson(url) {
+  return fetch(url)
+    .then(response => response.json());
+}
+
+function loadGithubUser(name) {
+  return fetch(`https://api.github.com/users/${name}`)
+    .then(response => response.json());
+}
+
+function showAvatar(githubUser) {
+  return new Promise(function(resolve, reject) {
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() => {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  });
+}
+
+// Use them:
+// loadJson('http://javascript.info/article/promise-chaining/user.json')
+//   .then(user => loadGithubUser('thevetdoctor'))
+//   // .then(user => loadGithubUser(user.name))
+//   .then(showAvatar)
+//   .then(githubUser => alert(`Finished showing ${githubUser.name}`));
+  // ...
+
+
+//   async function showAvatar() {
+
+//   // read our JSON
+//   let response = await fetch('http://javascript.info/article/promise-chaining/user.json');
+//   let user = await response.json();
+
+//   user = {
+//     name: 'thevetdoctor',
+//     location: 'nigeria'
+//   }
+
+//   // read github user
+//   let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+//   let githubUser = await githubResponse.json();
+
+//   // show the avatar
+//   let img = document.createElement('img');
+//   img.src = githubUser.avatar_url;
+//   img.className = "promise-avatar-example";
+//   document.body.append(img);
+
+//   // wait 3 seconds
+//   await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+//   img.remove();
+
+//   return githubUser;
+// }
+
+// showAvatar();
+</script>
+<script src="js/idb.js"></script>
+<!-- <script src="sw.js"></script> -->
+<script src="js/app.js"></script>
+</body>
+</html>
