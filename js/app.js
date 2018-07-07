@@ -305,7 +305,7 @@ convertedValue.innerHTML = `<h3> ${currFrom.value} ${amount.value}  is equivalen
 
 convertedValue.innerHTML = '';
 
-convertedValue.innerHTML = `<h3> ... Loading rates, please refresh the page and try again</h3>`;
+convertedValue.innerHTML = `<h3> ... Loading rates, click again</h3>`;
      }
 
   }
