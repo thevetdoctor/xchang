@@ -173,7 +173,7 @@ factorArray = factorArray.sort();
             .catch((err) => {
               console.log('Error:' , err);
 
-              convertedValue.innerHTML = 'Some Error';
+              convertedValue.innerHTML = 'Some error occured, please refresh';
               convertBtn.disabled = false;
                           // convertBtn.disabled = false;
             })
