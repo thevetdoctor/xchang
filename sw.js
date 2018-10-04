@@ -1,4 +1,4 @@
-const cacheName = 'version 0';
+const cacheName = 'version 1';
 const cacheFiles = [
 					'./',
 					'./js/',
