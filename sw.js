@@ -1,6 +1,10 @@
 const cacheName = 'version 1';
 const cacheFiles = [
+<<<<<<< HEAD
 					'./',
+=======
+					'./xchange/',
+>>>>>>> d85fe1adf980510cb4c251187b0f0c6b919c5f16
 					'./js/',
 					'./css/'
 					]
