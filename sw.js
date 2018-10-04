@@ -1,8 +1,8 @@
 const cacheName = 'version 1';
 const cacheFiles = [
-					'/',
-					'/js/',
-					'/css/'
+					'./',
+					'./js/',
+					'./css/'
 					]
 
 
