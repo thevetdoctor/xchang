@@ -41,38 +41,124 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
 	console.log(`Fetching ${e.request.url}`);
-	e.respondWith(
-			caches.match(e.request)
-			.then((res1) => {
-				if(res1){
-					console.log(`Match of ${e.request.url} found in SW`);
-					return res1;
+
+
+
+e.respondWith(
+		caches.match(e.request.url)
+		.then((response) => {
+
+			 if(response) {
+				console.log('[ServiceWorker] Found in cache', e.request.url);
+				return response;
+			}
+
+
+			let requestClone = e.request.clone();
+
+			fetch(requestClone)
+			.then((response) => {
+
+				if(!response) {
+					console.log('[ServiceWorker] No response from fetch');
+					return response;
 				}
 
-				let clonedRequest = e.request.clone();
+				let responseClone = response.clone();
+				caches.open(cacheName)
+				.then((cache) => {
+					console.log('[ServiceWorker] New Data New', e.request.url);
+					cache.put(e.request, responseClone);
+					return response;
+				});
 
-				fetch(clonedRequest)
-				.then((res2) => {
-					if(!res2){
-						console.log(`No response from new fetch by SW`);
-					}
-
-				let clonedResponse = res2.clone();
-
-					caches.open(cacheName)
-					.then((cache) => {
-						console.log(`New Data fetched & cached by SW`);
-						cache.put(e.request, clonedResponse);
-						return res2;
-					})
-				})
-				.catch((err) => {
-					console.log(`Error in Fetching & Caching by SW`);
-				})
 			})
+			.catch((err) => {
+				console.log('[ServiceWorker] Error fetching & caching new data', err);
+			})
+		})
 
 		)
-});
+
+
+
+
+
+// const cacheName = 'version 1';
+// const cacheFiles = [
+// 					'./',
+// 					'./js/',
+// 					'./css/'
+// 					]
+
+
+// self.addEventListener('install', (e) => {
+// 		console.log(`Installing SW`);
+// 	e.waitUntil(
+// 				caches.open('cacheName')
+// 				.then((cache) => {
+// 					console.log(`Adding cacheFiles`);
+// 					return cache.addAll(cacheFiles);
+// 					console.log(...cacheFiles);
+// 					console.log(`SW installed`)
+// 				})
+// 			)
+// });
+
+
+// self.addEventListener('activate', (e) => {
+// 	console.log(`Activating SW`);
+// 	e.waitUntil(
+// 				caches.keys()
+// 				.then((cacheNames) => {
+// 					return Promise.all(
+// 							cacheNames.map((thisCacheName) => {
+// 								if(thisCacheName !== cacheName){
+// 									console.log(`Deleting cacheFiles from ${cacheName}`);
+// 									return caches.delete(thisCacheName);
+// 								}
+// 							})
+// 						)
+// 				console.log(`SW activated`)
+// 				})
+// 		)
+// });
+
+
+// self.addEventListener('fetch', (e) => {
+// 	console.log(`Fetching ${e.request.url}`);
+// 	e.respondWith(
+// 			caches.match(e.request)
+// 			.then((res1) => {
+// 				if(res1){
+// 					console.log(`Match of ${e.request.url} found in SW`);
+// 					return res1;
+// 				}
+
+// 				let clonedRequest = e.request.clone();
+
+// 				fetch(clonedRequest)
+// 				.then((res2) => {
+// 					if(!res2){
+// 						console.log(`No response from new fetch by SW`);
+// 					}
+
+// 				let clonedResponse = res2.clone();
+
+// 					caches.open(cacheName)
+// 					.then((cache) => {
+// 						console.log(`New Data fetched & cached by SW`);
+// 						cache.put(e.request, clonedResponse);
+// 						return res2;
+// 					})
+// 				})
+// 				.catch((err) => {
+// 					console.log(`Error in Fetching & Caching by SW`);
+// 				})
+// 			})
+
+// 		)
+// });
 
 
 
