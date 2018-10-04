@@ -130,7 +130,7 @@ factorArray = factorArray.sort();
 
                           if(currentRate === undefined){
                           convertedValue.innerHTML = '';
-                          convertedValue.innerHTML = `<h4> Rates not available at the moment!</h4>`;
+                          convertedValue.innerHTML = `<h4> Getting currency rates, please wait... </h4>`;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
