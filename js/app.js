@@ -2,7 +2,7 @@ function sw(){
   if(navigator.serviceWorker){
     console.log('Browser supports service worker');
 
-    navigator.serviceWorker.register('./sw.js', {scope: '/'}).then((response) => {
+    navigator.serviceWorker.register('./sw.js', {scope: '/xchang/'}).then((response) => {
       console.log('Success: serviceWorker registered')
       console.log('Scope:', response.scope, 'State:', response.active.state)
     })
@@ -130,7 +130,7 @@ factorArray = factorArray.sort();
 
                           if(currentRate === undefined){
                           convertedValue.innerHTML = '';
-                          convertedValue.innerHTML = `<h4> Rates not available at the moment!</h4>`;
+                          convertedValue.innerHTML = `<h4> Getting currency rates, please wait... </h4>`;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -173,7 +173,7 @@ factorArray = factorArray.sort();
             .catch((err) => {
               console.log('Error:' , err);
 
-              convertedValue.innerHTML = 'Some Error';
+              convertedValue.innerHTML = 'Some error occured, please refresh';
               convertBtn.disabled = false;
                           // convertBtn.disabled = false;
             })
