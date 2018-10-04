@@ -10,7 +10,7 @@ const port = 1234;
 app.use(express.static('./'));
 
 // app.use((req, res) => res.render(`/fetch/fetch`));
-app.use((req, res) => res.sendFile(`${__dirname}/fetch.html`));
+app.use((req, res) => res.sendFile(`${__dirname}/index.html`));
 
 // app.get('/', (req, res) => {
 // 	res.send('Welcome here!');
