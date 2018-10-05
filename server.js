@@ -8,10 +8,10 @@ const app = express();
 const port = 1234;
 
 // app.use(express.static('./'));
-app.use(express.static(path.join(__dirname, '/')))
+app.use(express.static(path.join(__dirname, '/public')))
 
 // app.use((req, res) => res.render(`/fetch/fetch`));
-app.use((req, res) => res.sendFile(`${__dirname}/index.html`));
+app.use((req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 
 // app.get('/', (req, res) => {
