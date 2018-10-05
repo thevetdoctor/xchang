@@ -21,7 +21,7 @@ input, select {
 
 .container-fluid {
 	display: flex;
-	/*flex: row nowrap;*/
+	flex: column;
 }
 
 .footer {
