@@ -43,3 +43,19 @@ input, select {
       right: 10px;
       color: #000;
     }
+
+
+@media(max-width: 400px) {
+	.footer {
+      position: relative;
+      bottom: 10px;
+      right: 10px;
+      color: #000;
+      font-size: 14px;
+    }
+
+.footer a {
+      color: #000;
+      font-size: 14px;
+
+}
