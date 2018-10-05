@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname, '/')))
 app.use((req, res) => res.sendFile(`${__dirname}/index.html`));
 
 
-app.get('/', (req, res) => {
-	res.sendFile('index.html', { root: __dirname });
-});
+// app.get('/', (req, res) => {
+// 	res.sendFile('index.html', { root: __dirname });
+// });
 
 // app.get('/', (req, res) => {
 // 	res.send('Welcome here!');

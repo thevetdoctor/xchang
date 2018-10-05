@@ -2,7 +2,7 @@ function sw(){
   if(navigator.serviceWorker){
     console.log('Browser supports service worker');
 
-    navigator.serviceWorker.register('./sw.js', {scope: '/xchang/'}).then((response) => {
+    navigator.serviceWorker.register('./sw.js', {scope: '/'}).then((response) => {
       console.log('Success: serviceWorker registered')
       console.log('Scope:', response.scope, 'State:', response.active.state)
     })
