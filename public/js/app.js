@@ -1,3 +1,5 @@
+const rates = require('/currencies');
+
 function sw(){
   if(navigator.serviceWorker){
     console.log('Browser supports service worker');
