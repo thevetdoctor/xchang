@@ -192,7 +192,7 @@ factorArray = factorArray.sort();
                       amountValue *= currentRate;
                       amountValue.toFixed(2);
                       convertedValue.innerHTML = '';
-                      convertedValue.innerHTML = `<h4> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
+                      convertedValue.innerHTML = `<h4> <p>${currFrom.value} => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
                           convertBtn.disabled = false;
                         });
 
