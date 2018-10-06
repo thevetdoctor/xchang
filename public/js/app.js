@@ -113,6 +113,12 @@ factorArray = factorArray.sort();
                     convertedValue.innerHTML = `<h4> Please fill in the value to convert!</h4>`;
                     return;
                   }
+    
+                   if(isNaN(amount.value)){
+                    convertedValue.innerHTML = `<h4> Please enter numbers only!</h4>`;
+                    return;
+                  }
+    
                   idFrom = currFrom.value;
                   idTo = currTo.value;
                   equiv = idFrom + '_' + idTo;
