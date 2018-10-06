@@ -38,7 +38,7 @@ const rates = {"results":
 "GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
 "AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
 "CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
-"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"},
+"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"}
   }
 };
 
