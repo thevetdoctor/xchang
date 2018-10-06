@@ -59,6 +59,6 @@ input, select {
       font-size: 14px;
 
 }
-input {
+input, select {
        width: 80vw;
 	}
