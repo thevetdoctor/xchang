@@ -27,20 +27,20 @@ const Database = idb.open('ExchangeRates', 1, (upgradeDb) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-let rates = {"results":
-{
-"USD":{"currencyName":"United States Dollar","currencySymbol":"$","id":"USD"},
-"GBP":{"currencyName":"British Pound","currencySymbol":"£","id":"GBP"},
-"EUR":{"currencyName":"Euro","currencySymbol":"€","id":"EUR"},
-"NGN":{"currencyName":"Nigerian Naira","currencySymbol":"₦","id":"NGN"},
-"CAD":{"currencyName":"Canadian Dollar","currencySymbol":"$","id":"CAD"},
-"BTC":{"currencyName":"Bitcoin","currencySymbol":"BTC","id":"BTC"},
-"GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
-"AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
-"CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
-"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"},
-  }
-};
+// let rates = {"results":
+// {
+// "USD":{"currencyName":"United States Dollar","currencySymbol":"$","id":"USD"},
+// "GBP":{"currencyName":"British Pound","currencySymbol":"£","id":"GBP"},
+// "EUR":{"currencyName":"Euro","currencySymbol":"€","id":"EUR"},
+// "NGN":{"currencyName":"Nigerian Naira","currencySymbol":"₦","id":"NGN"},
+// "CAD":{"currencyName":"Canadian Dollar","currencySymbol":"$","id":"CAD"},
+// "BTC":{"currencyName":"Bitcoin","currencySymbol":"BTC","id":"BTC"},
+// "GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
+// "AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
+// "CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
+// "ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"},
+//   }
+// };
 
 rates = rates.results;
 
