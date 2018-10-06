@@ -24,6 +24,11 @@ input, select {
 	flex-direction: column;
 }
 
+#convertBtn {
+	background-color: #008000;
+	color: #fff;
+}
+
 .footer {
       position: absolute;
       bottom: 10px;
