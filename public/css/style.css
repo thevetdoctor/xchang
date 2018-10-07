@@ -2,12 +2,12 @@ body {
 	/*background-image: linear-gradient(to bottom right, blue, white);*/
 	background-image: linear-gradient(to top right, #234fef, #fff);
 	padding: 10px 20px;
-	width: 80vw;
+	/*width: 80vw;*/
 	margin: 10px auto;
 	text-align: center;
-	/*line-height: 1.1em;*/
-	font-size: 1.1em;
-
+	line-height: 1.1em;
+	font-size: 1em;
+	font-family: 'Raleway', sans-serif;
 }
 
 input, select {
@@ -19,14 +19,20 @@ input, select {
 	border-radius: 10px;
 }
 
+#handle2 {
+	margin-left: 15px;
+}
+
 .container-fluid {
 	display: flex;
 	flex-direction: column;
 }
 
 #convertBtn {
+	margin-left: 60px;
 	background-color: #008000;
 	color: #fff;
+	padding: 7px 15px;
 }
 
 .footer {
@@ -52,7 +58,7 @@ input, select {
 <<<<<<< HEAD
 =======
 
-@media(max-width: 400px) {
+@media only screen and (max-width: 600px) {
 	.footer {
       position: relative;
       bottom: 10px;
@@ -68,5 +74,11 @@ input, select {
 }
 input, select {
        width: 80vw;
+	}
+#amount {
+	display: block;
+}
+	#handle2, #convertBtn {
+		margin-left: 1px;
 	}
 >>>>>>> 288b95ba68a88fe163330d0ac05bedb64a30895e

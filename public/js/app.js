@@ -1,3 +1,5 @@
+// const rates = require('./currencies');
+
 function sw(){
   if(navigator.serviceWorker){
     console.log('Browser supports service worker');
@@ -27,22 +29,22 @@ const Database = idb.open('ExchangeRates', 1, (upgradeDb) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-const rates = {"results":
-{
-"USD":{"currencyName":"United States Dollar","currencySymbol":"$","id":"USD"},
-"GBP":{"currencyName":"British Pound","currencySymbol":"£","id":"GBP"},
-"EUR":{"currencyName":"Euro","currencySymbol":"€","id":"EUR"},
-"NGN":{"currencyName":"Nigerian Naira","currencySymbol":"₦","id":"NGN"},
-"CAD":{"currencyName":"Canadian Dollar","currencySymbol":"$","id":"CAD"},
-"BTC":{"currencyName":"Bitcoin","currencySymbol":"BTC","id":"BTC"},
-"GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
-"AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
-"CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
-"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"}
-  }
-};
+// const rates = {"results":
+// {
+// "USD":{"currencyName":"United States Dollar","currencySymbol":"$","id":"USD"},
+// "GBP":{"currencyName":"British Pound","currencySymbol":"£","id":"GBP"},
+// "EUR":{"currencyName":"Euro","currencySymbol":"€","id":"EUR"},
+// "NGN":{"currencyName":"Nigerian Naira","currencySymbol":"₦","id":"NGN"},
+// "CAD":{"currencyName":"Canadian Dollar","currencySymbol":"$","id":"CAD"},
+// "BTC":{"currencyName":"Bitcoin","currencySymbol":"BTC","id":"BTC"},
+// "GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
+// "AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
+// "CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
+// "ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"}
+//   }
+// };
 
-rates = rates.results;
+const rates = rate.results;
 
 let currFrom = document.getElementById('handle1');
 let currTo = document.getElementById('handle2');
@@ -51,10 +53,10 @@ let ratesArray = [];
 let currOptions = `<option id="empty" value="Please select currency"> Please select currency </option>`;
 
 for(let rate in rates){
-// if(rates[rate]['currencySymbol'] === undefined){
-//   rates[rate]['currencySymbol'] = 'NA';
-    // rates[rate]['currencySymbol']? undefined : 'NA';
-// }
+if(rates[rate]['currencySymbol'] === undefined){
+  rates[rate]['currencySymbol'] = rates[rate]['id'];
+    // rates[rate]['currencySymbol']? undefined : 'rates[rate]['id']';
+}
 
   ratesArray.push(rate);
 
@@ -114,12 +116,12 @@ factorArray = factorArray.sort();
                     convertedValue.innerHTML = `<h4> Please fill in the value to convert!</h4>`;
                     return;
                   }
-    
+
                    if(isNaN(amount.value)){
                     convertedValue.innerHTML = `<h4> Please enter numbers only!</h4>`;
                     return;
                   }
-    
+
                   idFrom = currFrom.value;
                   idTo = currTo.value;
                   equiv = idFrom + '_' + idTo;
@@ -173,7 +175,7 @@ factorArray = factorArray.sort();
                     amountValue *= currentRate;
                     amountValue.toFixed(2);
                     convertedValue.innerHTML = '';
-                    convertedValue.innerHTML = `<h4><p>${currFrom.value} => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
+                    convertedValue.innerHTML = `<h4><p>${currFrom.value} 1 => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
                           convertBtn.disabled = false;
                 }
             })
@@ -193,7 +195,7 @@ factorArray = factorArray.sort();
                       amountValue *= currentRate;
                       amountValue.toFixed(2);
                       convertedValue.innerHTML = '';
-                      convertedValue.innerHTML = `<h4> <p>${currFrom.value} => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
+                      convertedValue.innerHTML = `<h4> <p>${currFrom.value} 1 => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
                           convertBtn.disabled = false;
                         });
 
