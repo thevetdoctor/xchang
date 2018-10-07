@@ -16,12 +16,17 @@ input, select {
 	/*text-align: center;*/
 	line-height: 1.1em;
 	font-size: 1em;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 .container-fluid {
 	display: flex;
 	flex-direction: column;
+}
+
+#convertBtn {
+	background-color: #008000;
+	color: #fff;
 }
 
 .footer {
@@ -44,3 +49,24 @@ input, select {
       color: #000;
     }
 
+<<<<<<< HEAD
+=======
+
+@media(max-width: 400px) {
+	.footer {
+      position: relative;
+      bottom: 10px;
+      right: 10px;
+      color: #000;
+      font-size: 14px;
+    }
+
+.footer a {
+      color: #000;
+      font-size: 14px;
+
+}
+input, select {
+       width: 80vw;
+	}
+>>>>>>> 288b95ba68a88fe163330d0ac05bedb64a30895e

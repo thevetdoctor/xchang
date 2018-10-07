@@ -27,7 +27,7 @@ const Database = idb.open('ExchangeRates', 1, (upgradeDb) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-let rates = {"results":
+const rates = {"results":
 {
 "USD":{"currencyName":"United States Dollar","currencySymbol":"$","id":"USD"},
 "GBP":{"currencyName":"British Pound","currencySymbol":"£","id":"GBP"},
@@ -38,7 +38,7 @@ let rates = {"results":
 "GHS":{"currencyName":"Ghanaian Cedi","currencySymbol":"Cedi","id":"GHS"},
 "AED":{"currencyName":"UAE Dirham","currencySymbol":"Dirham","id":"AED"},
 "CNY":{"currencyName":"Chinese Yuan","currencySymbol":"¥","id":"CNY"},
-"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"},
+"ZAR":{"currencyName":"South African Rand","currencySymbol":"R","id":"ZAR"}
   }
 };
 
@@ -114,6 +114,12 @@ factorArray = factorArray.sort();
                     convertedValue.innerHTML = `<h4> Please fill in the value to convert!</h4>`;
                     return;
                   }
+    
+                   if(isNaN(amount.value)){
+                    convertedValue.innerHTML = `<h4> Please enter numbers only!</h4>`;
+                    return;
+                  }
+    
                   idFrom = currFrom.value;
                   idTo = currTo.value;
                   equiv = idFrom + '_' + idTo;
@@ -167,7 +173,7 @@ factorArray = factorArray.sort();
                     amountValue *= currentRate;
                     amountValue.toFixed(2);
                     convertedValue.innerHTML = '';
-                    convertedValue.innerHTML = `<h4> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
+                    convertedValue.innerHTML = `<h4><p>${currFrom.value} => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
                           convertBtn.disabled = false;
                 }
             })
@@ -187,7 +193,7 @@ factorArray = factorArray.sort();
                       amountValue *= currentRate;
                       amountValue.toFixed(2);
                       convertedValue.innerHTML = '';
-                      convertedValue.innerHTML = `<h4> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
+                      convertedValue.innerHTML = `<h4> <p>${currFrom.value} => ${currTo.value} ${currentRate}</p> ${currFrom.value} ${amount.value}  is equivalent to ${currTo.value} ${convertedValue.innerText} ${amountValue.toFixed(2)}</h4>`;
                           convertBtn.disabled = false;
                         });
 
