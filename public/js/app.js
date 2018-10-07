@@ -2,9 +2,9 @@ function sw(){
   if(navigator.serviceWorker){
     console.log('Browser supports service worker');
 
-    navigator.serviceWorker.register('./sw.js', {scope: '../'}).then((response) => {
-      console.log('Success: serviceWorker registered')
-      console.log('Scope:', response.scope, 'State:', response.active.state)
+    navigator.serviceWorker.register('./sw.js', { scope: './'}).then((response) => {
+      console.log(`Scope: ${response.scope}, State: ${response.active.state}`)
+      console.log(`Success: serviceWorker registered`, response);
     })
     .catch((err) => {
       console.log('Error: serviceWorker not registered', err);
@@ -47,7 +47,8 @@ rates = rates.results;
 let currFrom = document.getElementById('handle1');
 let currTo = document.getElementById('handle2');
 let ratesArray = [];
-let currOptions = '';
+// let currOptions = '';
+let currOptions = `<option id="empty" value="Please select currency"> Please select currency </option>`;
 
 for(let rate in rates){
 // if(rates[rate]['currencySymbol'] === undefined){

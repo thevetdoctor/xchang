@@ -1,18 +1,9 @@
 const cacheName = 'version 1';
 const cacheFiles = [
-					'/',
-					'/js/',
-					'/css/'
+					'./',
+					'./js/app.js',
+					'./css/style.css',
 					]
-// const cacheFiles = [
-// <<<<<<< HEAD
-// 					'./',
-// =======
-// 					'./xchange/',
-// >>>>>>> d85fe1adf980510cb4c251187b0f0c6b919c5f16
-// 					'./js/',
-// 					'./css/'
-// 					]
 
 
 self.addEventListener('install', (e) => {
@@ -21,9 +12,9 @@ self.addEventListener('install', (e) => {
 				caches.open('cacheName')
 				.then((cache) => {
 					console.log(`Adding cacheFiles`);
-					return cache.addAll(cacheFiles);
 					console.log(...cacheFiles);
 					console.log(`SW installed`)
+					return cache.addAll(cacheFiles);
 				})
 			)
 });

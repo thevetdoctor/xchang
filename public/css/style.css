@@ -1,12 +1,12 @@
 body {
 	/*background-image: linear-gradient(to bottom right, blue, white);*/
 	background-image: linear-gradient(to top right, #234fef, #fff);
-	padding: 10px;
+	padding: 10px 20px;
 	width: 80vw;
 	margin: 10px auto;
 	text-align: center;
-	line-height: 1.1em;
-	font-size: 1.3em;
+	/*line-height: 1.1em;*/
+	font-size: 1.1em;
 
 }
 
@@ -43,3 +43,4 @@ input, select {
       right: 10px;
       color: #000;
     }
+
