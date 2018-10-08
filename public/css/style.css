@@ -1,9 +1,14 @@
+
+/** {
+	margin: 0;
+	padding: 0;
+}*/
 body {
 	/*background-image: linear-gradient(to bottom right, blue, white);*/
-	background-image: linear-gradient(to top right, #234fef, #fff);
-	padding: 10px 20px;
+	background-image: linear-gradient(to bottom right, #234fff, #fff);
+	padding: 5px 20px;
 	/*width: 80vw;*/
-	margin: 10px auto;
+	margin: 5px auto;
 	text-align: center;
 	line-height: 1.1em;
 	font-size: 1em;
@@ -19,6 +24,13 @@ input, select {
 	border-radius: 10px;
 }
 
+#convertedValue {
+	border-radius: 10px;
+	background-color: #245;
+	padding: 4px;
+	color: #6af;
+}
+
 #handle2 {
 	margin-left: 15px;
 }
@@ -26,6 +38,7 @@ input, select {
 .container-fluid {
 	display: flex;
 	flex-direction: column;
+	margin-top: 0.5vh;
 }
 
 #convertBtn {
@@ -68,7 +81,7 @@ input, select {
     }
 
 .footer a {
-	margin-top: 10vh;
+	margin-top: 6vh;
       color: #000;
       font-size: 14px;
 
@@ -80,7 +93,7 @@ input, select {
 	display: block;
 }
 	#handle2, #convertBtn {
-		/*margin-left: 0px;*/
+		margin-left: 6px;
 	}
 
 	#convertBtn {
@@ -89,10 +102,16 @@ input, select {
 	}
 
 	#currency {
-		margin-top: 20vh;
+		margin-top: 4vh;
 	}
 
 	.form-div {
-		margin-bottom: 4vh;
+		margin-bottom: 2vh;
+		margin-top: 0;
+	}
+
+	.header {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 /*>>>>>>> 288b95ba68a88fe163330d0ac05bedb64a30895e*/

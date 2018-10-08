@@ -75,6 +75,8 @@ const convertBtn = document.getElementById('convertBtn');
 const amount = document.getElementById('amount');
 const convertedValue = document.getElementById('convertedValue');
 
+
+convertedValue.style.display = 'none';
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -111,6 +113,9 @@ factorArray = factorArray.sort();
 
   const convert = (e) => {
                   e.preventDefault();
+
+                  convertedValue.style.display = 'block';
+
                     convertedValue.innerHTML = '';
                   if(amount.value == ''){
                     convertedValue.innerHTML = `<h4> Please fill in the value to convert!</h4>`;
