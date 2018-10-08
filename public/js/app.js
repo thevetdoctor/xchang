@@ -122,14 +122,15 @@ factorArray = factorArray.sort();
                     return;
                   }
 
+                  if(currFrom.value == 'empty' || currTo.value == 'empty'){
+                    convertedValue.innerHTML = `<h4> Please choose from/to currencies</h4>`;
+                    return;
+                  }
+
                   idFrom = currFrom.value;
                   idTo = currTo.value;
                   equiv = idFrom + '_' + idTo;
 
-                  if(idFrom == 'empty' || idTo == 'empty'){
-                    convertedValue.innerHTML = `<h4> Please choose from/to currencies</h4>`;
-                    return;
-                  }
 
       /////////////////////////////////////////////////////////////
 // try {
