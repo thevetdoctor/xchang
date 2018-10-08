@@ -50,7 +50,7 @@ let currFrom = document.getElementById('handle1');
 let currTo = document.getElementById('handle2');
 let ratesArray = [];
 // let currOptions = '';
-let currOptions = `<option id="empty" value="Please select currency"> Please select currency </option>`;
+let currOptions = `<option id="empty" value="empty"> Please select currency </option>`;
 
 for(let rate in rates){
 if(rates[rate]['currencySymbol'] === undefined){
@@ -125,6 +125,11 @@ factorArray = factorArray.sort();
                   idFrom = currFrom.value;
                   idTo = currTo.value;
                   equiv = idFrom + '_' + idTo;
+
+                  if(idFrom == 'empty' || idTo == 'empty'){
+                    convertedValue.innerHTML = `<h4> Please choose from/to currencies</h4>`;
+                    return;
+                  }
 
       /////////////////////////////////////////////////////////////
 // try {
