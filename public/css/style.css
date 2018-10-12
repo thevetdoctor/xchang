@@ -28,7 +28,8 @@ input, select {
 	border-radius: 10px;
 	background-color: #245;
 	padding: 4px;
-	color: #6af;
+	color: #fff;
+	/*color: #234fff;*/
 }
 
 #handle2 {
