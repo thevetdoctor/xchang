@@ -49,6 +49,7 @@ const rates = rate.results;
 let currFrom = document.getElementById('handle1');
 let currTo = document.getElementById('handle2');
 let ratesArray = [];
+// let ratesSortedArray = [];
 // let currOptions = '';
 let currOptions = `<option id="empty" value="empty"> Please select currency </option>`;
 
@@ -59,6 +60,8 @@ if(rates[rate]['currencySymbol'] === undefined){
 }
 
   ratesArray.push(rate);
+
+  // ratesSortedArray.push()
 
 // setting the options of the select element on the DOM
 
